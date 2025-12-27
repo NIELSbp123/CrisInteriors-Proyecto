@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Cris Interiors Lima</title>
+</head>
+<body>
+
+    <header>
+        <div style="text-align: center; padding: 20px; background-color: #f4f1ea;">
+            <h1>Cris Interiors Lima</h1>
+        </div>
+        
+        <nav style="background-color: #333; padding: 10px; text-align: center;">
+            <a href="index.html" style="color: white; margin: 0 15px; text-decoration: none;">Inicio</a>
+            <a href="index.html#servicios" style="color: white; margin: 0 15px; text-decoration: none;">Servicios</a>
+            <a href="index.html#proyectos" style="color: white; margin: 0 15px; text-decoration: none;">Portafolio</a>
+            <a href="contacto.html" style="color: white; margin: 0 15px; text-decoration: none;">Contacto</a>
+        </nav>
+    </header>
+
+    <main style="padding: 40px; max-width: 600px; margin: 0 auto;">
+        <h2 style="text-align: center;">Agenda tu Cita</h2>
+        <p style="text-align: center;">Déjanos tus datos y nos pondremos en contacto para empezar a diseñar tus sueños.</p>
+        
+        <form style="border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
+            <div style="margin-bottom: 15px;">
+                <label for="nombre">Nombre completo:</label><br>
+                <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 8px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 8px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="tipo">Tipo de servicio:</label><br>
+                <select id="tipo" name="tipo" style="width: 100%; padding: 8px;">
+                    <option value="asesoria">Asesoría Express</option>
+                    <option value="proyecto">Proyecto Integral</option>
+                    <option value="remodelacion">Remodelación</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="mensaje">Cuéntanos sobre tu espacio:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" style="width: 100%; padding: 8px;"></textarea>
+            </div>
+
+            <button type="submit" style="background-color: #333; color: white; padding: 10px 20px; border: none; cursor: pointer;">Enviar Mensaje</button>
+        </form>
+    </main>
+
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 20px;">
+        <p>&copy; 2024 Cris Interiors Lima.</p>
+    </footer>
+
+</body>
+</html>
