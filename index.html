@@ -3,46 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cris Interiors Lima - Diseño de Interiores</title>
-    </head>
+    <title>Cris Interiors Lima | Diseño de Interiores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ESTILOS MINIMALISTAS Y NEUTROS */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #fdfcf8; /* Blanco crema */
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Títulos elegantes */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c2c2c;
+            font-weight: 400;
+        }
+
+        /* Encabezado limpio */
+        header {
+            background-color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        header h1 {
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            color: #8e8071; /* Color Taupe/Beige */
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Barra de navegación minimalista */
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #8e8071; /* Cambio de color al pasar el mouse */
+            border-bottom: 1px solid #8e8071;
+        }
+
+        /* Sección Principal (Hero) con imagen grande */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 2px; /* Bordes sutiles */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .hero-text {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        /* Sección de Servicios */
+        .services {
+            background-color: #f4f1ea; /* Fondo beige muy suave */
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .service-item {
+            max-width: 300px;
+        }
+
+        /* Botones elegantes */
+        .btn {
+            display: inline-block;
+            background-color: #2c2c2c;
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #8e8071;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #2c2c2c;
+            color: #999;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        
+        footer a { color: #fff; text-decoration: none; }
+    </style>
+</head>
 <body>
 
     <header>
-        <div style="text-align: center; padding: 20px; background-color: #f4f1ea;">
-            <h1>Cris Interiors Lima</h1>
-            <p>Transformamos espacios, diseñamos emociones</p>
-        </div>
+        <h1>Cris Interiors Lima</h1>
+        <p>Diseño Interior & Styling</p>
         
-        <nav style="background-color: #333; padding: 10px; text-align: center;">
-            <a href="index.html" style="color: white; margin: 0 15px; text-decoration: none;">Inicio</a>
-            <a href="#servicios" style="color: white; margin: 0 15px; text-decoration: none;">Servicios</a>
-            <a href="#proyectos" style="color: white; margin: 0 15px; text-decoration: none;">Portafolio</a>
-            <a href="contacto.html" style="color: white; margin: 0 15px; text-decoration: none;">Contacto</a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#servicios">Servicios</a>
+            <a href="contacto.html">Contacto</a>
         </nav>
     </header>
 
     <main>
-        <section id="inicio" style="padding: 40px; text-align: center;">
-            <h2>Bienvenidos a tu nuevo hogar</h2>
-            <p>Somos un estudio especializado en crear interiores residenciales con personalidad. 
-               Desde la elección del color hasta el último mueble, nos encargamos de todo.</p>
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" 
-                 alt="Diseño de sala moderna" style="width: 100%; max-width: 600px; border-radius: 8px;">
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Eleva tu estilo de vida</h2>
+                <p>Creamos espacios que cuentan historias. Un equilibrio perfecto entre estética minimalista y calidez funcional para tu hogar en Lima.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop" alt="Diseño de sala minimalista beige">
+            <br>
+            <a href="contacto.html" class="btn">Agendar Asesoría</a>
         </section>
 
-        <section id="servicios" style="background-color: #f9f9f9; padding: 40px;">
-            <h2 style="text-align: center;">Nuestros Servicios</h2>
-            <ul>
-                <li><strong>Diseño Integral:</strong> Planificación completa de tu espacio 3D.</li>
-                <li><strong>Asesoría Express:</strong> Consejos rápidos para mejorar una habitación.</li>
-                <li><strong>Styling:</strong> Selección de decoración y accesorios finales.</li>
-            </ul>
+        <section id="servicios" class="services">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>01. Diseño Integral</h3>
+                    <p>Desde los planos hasta el último detalle. Visualización 3D completa de tu futuro hogar.</p>
+                </div>
+                <div class="service-item">
+                    <h3>02. Styling & Deco</h3>
+                    <p>Selección de mobiliario, texturas y paleta de colores para renovar espacios existentes.</p>
+                </div>
+                <div class="service-item">
+                    <h3>03. Asesoría Online</h3>
+                    <p>Guía experta para transformar tu espacio a tu propio ritmo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" style="padding: 60px 20px; text-align: center;">
+            <h2>Últimos Proyectos</h2>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=400&h=500&auto=format&fit=crop" style="width: 300px; height: 400px; object-fit: cover;" alt="Dormitorio minimalista">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=400&h=500&auto=format&fit=crop" style="width: 300px; height: 400px; object-fit: cover;" alt="Sala de estar moderna">
+            </div>
         </section>
     </main>
 
-    <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 20px;">
+    <footer>
         <p>&copy; 2024 Cris Interiors Lima. Todos los derechos reservados.</p>
-        <p>Síguenos en Instagram: <a href="https://www.instagram.com/cris.interiors.lima" target="_blank" style="color: #f4f1ea;">@cris.interiors.lima</a></p>
+        <p>Síguenos en Instagram: <a href="https://www.instagram.com/cris.interiors.lima" target="_blank">@cris.interiors.lima</a></p>
     </footer>
 
 </body>
