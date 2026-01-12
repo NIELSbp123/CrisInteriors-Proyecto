@@ -1,6 +1,4 @@
 
-/* --- 1. HERENCIA Y SELECTORES GLOBALES --- */
-/* Al definir la fuente en 'body', todos los hijos la heredan */
 body {
     font-family: 'Lato', sans-serif;
     background-color: #fdfcf8;
