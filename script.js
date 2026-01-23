@@ -1,6 +1,4 @@
-/* AA3 - LÓGICA DE NEGOCIO REAL (COTIZADOR CRIS INTERIORS) 
-   Actualizado: Precios fijos por espacio + Visita Técnica
-*/
+
 
 // --- FUNCIONALIDAD 1: COTIZADOR CON PRECIOS REALES ---
 
@@ -19,7 +17,7 @@ function calcularPresupuesto() {
 
     // 2. Lógica de Precios (Soles)
     let costoDiseno = 0;
-    let costoVisita = 180; // Costo fijo visita técnica
+    let costoVisita = 180; 
     let mensajeExtra = "";
 
     // COCINA: 450 hasta 9m2, 500 si es más
@@ -82,7 +80,7 @@ function calcularPresupuesto() {
     `;
 }
 
-// --- FUNCIONALIDAD 2: LISTA DE BENEFICIOS (Se mantiene igual) ---
+// --- FUNCIONALIDAD 2: LISTA DE BENEFICIOS  ---
 const beneficios = [
     "✨ Visualización 3D Fotorrealista",
     "✨ Asesoría en Compra de Materiales",
