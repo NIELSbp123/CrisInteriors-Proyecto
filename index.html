@@ -19,6 +19,7 @@
             <a href="#proyectos">Proyectos</a>
             <a href="#servicios">Servicios</a>
             <a href="contacto.html">Contacto</a>
+            <a href="login.html" style="font-size: 0.8rem; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px; margin-left: 10px;">Login Admin</a>
         </nav>
     </header>
 
@@ -26,10 +27,10 @@
         <section class="hero">
             <div class="hero-text">
                 <h2>Eleva tu estilo de vida</h2>
-                <p>Creamos espacios que cuentan historias. Un equilibrio perfecto entre estética minimalista y calidez funcional para tu hogar o empresa.</p>
+                <p>Creamos espacios que cuentan historias. Un equilibrio perfecto entre estética minimalista y calidez funcional para tu hogar en Lima.</p>
             </div>
             
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Diseño de sala minimalista beige">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sala estilo minimalista">
             
             <br>
             <a href="contacto.html" class="btn">Agendar Asesoría</a>
@@ -125,6 +126,30 @@
         <p>&copy; 2026 Cris Interiors Lima. Todos los derechos reservados.</p>
         <p>Síguenos en Instagram: <a href="https://www.instagram.com/cris.interiors.lima" target="_blank">@cris.interiors.lima</a></p>
     </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script>
+        // Credenciales del proyecto
+        var firebaseConfig = {
+            apiKey: "AIzaSyDoO3x3i8OpfJbdEisa07vyPRCwN7eXfDE",
+            authDomain: "crisinteriors-web.firebaseapp.com",
+            projectId: "crisinteriors-web",
+            storageBucket: "crisinteriors-web.firebasestorage.app",
+            messagingSenderId: "794081781774",
+            appId: "1:794081781774:web:b2b548f920a085bc09745f"
+        };
+
+        // Inicializamos Firebase solo si no existe ya
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+
+        // Variable global 'db' para usarla en script.js
+        var db = firebase.firestore();
+        console.log("Firebase DB conectado correctamente");
+    </script>
 
     <script src="script.js"></script>
 </body>

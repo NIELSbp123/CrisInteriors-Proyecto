@@ -1,15 +1,17 @@
-
+/* LÓGICA DEL PROYECTO - CRIS INTERIORS
+   Gestión de Cotizador y Beneficios
+*/
 
 // --- FUNCIONALIDAD 1: COTIZADOR CON PRECIOS REALES ---
 
 function calcularPresupuesto() {
-    // 1. Obtener datos
+    // 1. Obtener datos del HTML
     let tipoAmbiente = document.getElementById('tipoAmbiente').value;
     let metrosInput = document.getElementById('metros').value;
-    let metros = parseFloat(metrosInput); // Usamos decimales por si ponen 8.5
+    let metros = parseFloat(metrosInput); 
     let resultadoDiv = document.getElementById('resultadoPresupuesto');
 
-    // Validación
+    // Validación básica
     if (isNaN(metros) || metros <= 0) {
         resultadoDiv.innerHTML = "<p style='color:red; font-weight:bold;'>⚠️ Por favor, ingresa los metros cuadrados del espacio.</p>";
         return;
@@ -20,6 +22,8 @@ function calcularPresupuesto() {
     let costoVisita = 180; 
     let mensajeExtra = "";
 
+    // -- Reglas de Negocio --
+    
     // COCINA: 450 hasta 9m2, 500 si es más
     if (tipoAmbiente === 'cocina') {
         if (metros <= 9) {
@@ -34,7 +38,6 @@ function calcularPresupuesto() {
         if (metros <= 9) {
             costoDiseno = 450;
         } else {
-            // Asumimos un ligero incremento si es muy grande, o mantenemos base
             costoDiseno = 550; 
             mensajeExtra = "(Precio para espacios amplios mayores a 9m²)";
         }
@@ -73,14 +76,36 @@ function calcularPresupuesto() {
             <p style="font-size: 0.8rem; color: #888;">${mensajeExtra}</p>
 
             <div style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; font-size: 0.85rem; margin-top: 15px;">
-                <strong>✅ Incluye:</strong> Vistas 3D, 2-3 Reuniones, Vista en planta (medidas generales), Presupuesto.<br>
+                <strong>✅ Incluye:</strong> Vistas 3D, 2-3 Reuniones, Vista en planta, Presupuesto.<br>
                 <strong>❌ No incluye:</strong> Planos de muebles a detalle, Ejecución de obra.
             </div>
+            
+            <p style="text-align: center; margin-top: 10px; font-size: 0.8rem; color: green;">
+                ✔ Cotización guardada en el sistema.
+            </p>
         </div>
     `;
+
+    // 5. GUARDAR EN FIREBASE (AA4)
+    // Verificamos si la base de datos está activa antes de guardar
+    if (typeof db !== 'undefined') {
+        db.collection("cotizaciones").add({
+            ambiente: tipoAmbiente,
+            metros: metros,
+            precio: totalEstimado,
+            fecha: new Date().toLocaleString()
+        })
+        .then(() => {
+            console.log("Dato guardado en la nube correctamente.");
+        })
+        .catch((error) => {
+            console.error("Error al guardar:", error);
+        });
+    }
 }
 
-// --- FUNCIONALIDAD 2: LISTA DE BENEFICIOS  ---
+// --- FUNCIONALIDAD 2: LISTA DE BENEFICIOS ---
+
 const beneficios = [
     "✨ Visualización 3D Fotorrealista",
     "✨ Asesoría en Compra de Materiales",
@@ -90,8 +115,11 @@ const beneficios = [
 
 function cargarBeneficios() {
     let listaHTML = document.getElementById('listaBeneficios');
-    if (!listaHTML) return;
+    if (!listaHTML) return; // Si no existe la lista, salimos
+    
     listaHTML.innerHTML = "";
+    
+    // Recorremos el array y creamos los elementos
     for (let i = 0; i < beneficios.length; i++) {
         let item = document.createElement('li');
         item.textContent = beneficios[i];
@@ -99,4 +127,5 @@ function cargarBeneficios() {
     }
 }
 
+// Ejecutar al cargar la página
 window.onload = cargarBeneficios;
